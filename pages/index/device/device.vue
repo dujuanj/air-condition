@@ -23,7 +23,7 @@
 		value: 20,
 		name: '广州'
 	}];
-	let pieOption = {
+		let pieOption = {
 		animation: false,
 		backgroundColor: '#F8F8F8',
 		color: ['#37A2DA', '#32C5E9', '#67E0E3', '#91F2DE', '#FFDB5C', '#FF9F7F'],
@@ -48,8 +48,8 @@
 	};
 	export default {
 		components: {
-			mpvueEcharts,
-			uLink
+			mpvueEcharts
+			
 		},
 		data() {
 			return {
