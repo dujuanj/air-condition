@@ -1,105 +1,135 @@
 <template>
 	<view class="content">
-		<view class="canvasView">
-			<view class="canvas-bar">
-				<view class="title">饼图示例</view>
-				<button class="update-btn" type="primary" size="mini" @click="updatePie">修改饼状图数据</button>
-			</view>
-			<mpvue-echarts class="ec-canvas" @onInit="pieInit" canvasId="pie" ref="pieChart" />
+		  <view class="uni-padding-wrap ">
+          
+       <!-- <view class="content">
+            <view v-show="current === 0">
+                选项卡1的内容
+            </view>
+            <view v-show="current === 1">
+                选项卡2的内容
+            </view>
+            <view v-show="current === 2">
+                选项卡3的内容
+            </view>
+        </view> -->
+            <view class="uni-flex uni-row ">
+				
+                <view class="flex-item top cool" >
+					<uni-segmented-control :current="current" :values="items" @clickItem="onClickItem" style-type="button" active-color="#b7e8fe"></uni-segmented-control>
+					<!-- <image src="../../../static/xuehua.png" mode="" style="width:60upx;height:60upx;float: left;vertical-align: middle;"></image> -->
+					<!-- <view style="float: left;vertical-align: middle;margin-top:4upx">制冷</view> -->
+				</view>   
+						
+            </view>
+			<!-- 设置温度 -->
+			 <view class="uni-flex uni-column" >
+                <view class="flex-item flex-item-V " style='color: #fff;'>设置温度</view>
+                <view class="flex-item flex-item-V " style="text-align: center;position: relative;">
+					<img src="../../../static/yuan.png" alt="" style='width:450upx;height: 400upx;'>
+					<text class="num">27.5℃</text>
+					<uni-icon type="plus" size="30" color='#fff' class='add'></uni-icon>
+					<uni-icon type="minus" size="30" color='#fff' class='reduce'></uni-icon>
+					<img src="../../../static/images/yun_02.png" alt="" class='yunImg'>
+				</view>
+				
+                <view class="flex-item flex-item-V" >
+					<uni-badge text="当前温度27.0℃" type="warning" @click="bindClick"></uni-badge>
+				</view>
+            </view>
+			
+         
+        </view>
+		 <!-- 开关功能 -->
+		<view class="uni-flex uni-row keys">
+					  <view class="flex-item">
+						 
+						 <img src="../../../static/on.png" alt="" style='width:80upx;height: 80upx;'>
+						 <text>开关</text>
+					  </view>
 		</view>
 	</view>
 </template>
 
 <script>
-	import * as echarts from '@/components/echarts/echarts.simple.min.js';
-	import mpvueEcharts from '@/components/mpvue-echarts/src/echarts.vue';
-	const cityList = [{
-		value: 55,
-		name: '北京'
-	}, {
-		value: 38,
-		name: '上海'
-	}, {
-		value: 20,
-		name: '广州'
-	}];
-		let pieOption = {
-		animation: false,
-		backgroundColor: '#F8F8F8',
-		color: ['#37A2DA', '#32C5E9', '#67E0E3', '#91F2DE', '#FFDB5C', '#FF9F7F'],
-		series: [{
-			label: {
-				normal: {
-					fontSize: 14
-				}
-			},
-			type: 'pie',
-			center: ['50%', '50%'],
-			radius: [0, '60%'],
-			data: [],
-			itemStyle: {
-				emphasis: {
-					shadowBlur: 10,
-					shadowOffsetX: 0,
-					shadowColor: 'rgba(0, 2, 2, 0.3)'
-				}
-			}
-		}]
-	};
+	import uniSegmentedControl from "@/components/uni-segmented-control/uni-segmented-control.vue"
+	import uniIcon from "@/components/uni-icon/uni-icon.vue"
+	import uniBadge from "@/components/uni-badge/uni-badge.vue"
 	export default {
 		components: {
-			mpvueEcharts
-			
-		},
+			uniSegmentedControl,
+			uniIcon,
+			uniBadge
+			},
 		data() {
 			return {
-				
+				 items: ['制冷','制热'],
+            current: 0
 			}
 		},
-		onLoad() {
-			pieOption.series[0].data = cityList.slice(0);
-		},
 		methods: {
-			updatePie() {
-				// 参考 mpvue-charts 的懒加载示例
-				// https://github.com/F-loat/mpvue-echarts/blob/master/examples/lazyLoad.vue
-			
-				if (this.updateStatus) {
-					return;
-				}
-				pieOption.series[0].data.push({
-					value: 20,
-					name: '武汉'
-				});
-				pieOption.series[0].data.push({
-					value: 10,
-					name: '杭州'
-				});
-				this.$refs.pieChart.init();
-				this.updateStatus = true;
-			},
-			pieInit(e) {
-				let { width, height} = e ;
-				let canvas = this.$refs.pieChart.canvas 
-				echarts.setCanvasCreator(() => canvas);
-				let pieChart = echarts.init(canvas, null, {
-					width: width,
-					height: height
-				})
-				canvas.setChart(pieChart)
-			
-				pieChart.setOption(pieOption)
-				this.$refs.pieChart.setChart(pieChart)
-			},
+		  onClickItem(index) {
+            if (this.current !== index) {
+                this.current = index;
+            }
+        }
 		}
 	}
 </script>
 
 <style>
-uni-page-body {
+	.uni-padding-wrap  {
 		width: 100%;
-		background: url(../../../static/control.jpg) no-repeat;
+		background: url(../../../static/control.png) no-repeat;
 		background-size: 100% 100%;
+	}
+
+	.set {
+		font-size: 30upx;
+	}
+	.top{
+		width:550upx;
+		height: 70upx;
+		line-height: 70upx;
+		background:transparent;
+		margin:50upx auto;
+		border-radius: 25upx;
+		padding:0 20upx;
+		color:#88cfed;
+		text-align: left;
+	}
+	.cool{
+		/* margin-top:60upx; */
+	}
+	.wen{
+		font-size:96upx;
+		color:#79c4e3
 		
+	}
+	.num{
+		position: absolute;
+		top:180upx;
+		left:295upx;
+		color: #fff;
+		font-size:60upx;
+	}
+	.add{
+		position: absolute;
+		top:200upx;
+		right:50upx;
+	}
+	.reduce{
+		position: absolute;
+		top:200upx;
+		left:50upx;
+	}
+	.yunImg{
+		
+		position: absolute;
+		top:830upx;
+		left:-32upx;
+	}
+	.keys{
+		padding:40upx 20upx;
 	}
 </style>

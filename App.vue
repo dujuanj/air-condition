@@ -17,7 +17,7 @@
 	@import './comment/css/reset.css';
 	@import './comment/css/uni.css';
 	page {
-		background-color: #ccc;
+		background-color: #fff;
 		height: 100%;
 		font-size: 28upx;
 		line-height: 1.8;

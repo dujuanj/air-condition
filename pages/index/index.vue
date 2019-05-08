@@ -79,7 +79,7 @@
 <style>
 	.content {
 		width: 100%;
-		background: url(../../static/bg.jpg) no-repeat;
+		background: url(../../static/control.png) no-repeat;
 		background-size: 100% 100%;
 	}
 
