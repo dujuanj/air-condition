@@ -1,52 +1,53 @@
 <template>
 	<view class="content">
-		  <view class="uni-padding-wrap ">
-          
-       <!-- <view class="content">
-            <view v-show="current === 0">
-                选项卡1的内容
-            </view>
-            <view v-show="current === 1">
-                选项卡2的内容
-            </view>
-            <view v-show="current === 2">
-                选项卡3的内容
-            </view>
-        </view> -->
-            <view class="uni-flex uni-row ">
-				
-                <view class="flex-item top cool" >
-					<uni-segmented-control :current="current" :values="items" @clickItem="onClickItem" style-type="button" active-color="#b7e8fe"></uni-segmented-control>
-					<!-- <image src="../../../static/xuehua.png" mode="" style="width:60upx;height:60upx;float: left;vertical-align: middle;"></image> -->
-					<!-- <view style="float: left;vertical-align: middle;margin-top:4upx">制冷</view> -->
-				</view>   
-						
-            </view>
+		<view class="uni-padding-wrap ">
+			<view class="uni-flex uni-row ">
+			</view>
 			<!-- 设置温度 -->
-			 <view class="uni-flex uni-column" >
-                <view class="flex-item flex-item-V " style='color: #fff;'>设置温度</view>
-                <view class="flex-item flex-item-V " style="text-align: center;position: relative;">
-					<img src="../../../static/yuan.png" alt="" style='width:450upx;height: 400upx;'>
+			<view class="uni-flex uni-column">
+				<view class="flex-item flex-item-V " style='color: #fff;margin-left:300upx;margin-top:65upx;'>设置温度</view>
+				<view class="flex-item flex-item-V " style="position: relative;z-index: 10;">
+					<img src="../../../static/yuan.png" alt="" style='width:450upx;height: 400upx;margin-left:125upx;margin-top:30upx;'>
 					<text class="num">27.5℃</text>
 					<uni-icon type="plus" size="30" color='#fff' class='add'></uni-icon>
 					<uni-icon type="minus" size="30" color='#fff' class='reduce'></uni-icon>
-					<img src="../../../static/images/yun_02.png" alt="" class='yunImg'>
+					<!-- <img src="../../../static/images/yun_02.png" alt="" class='yunImg'> -->
 				</view>
-				
-                <view class="flex-item flex-item-V" >
-					<uni-badge text="当前温度27.0℃" type="warning" @click="bindClick"></uni-badge>
-				</view>
-            </view>
-			
-         
-        </view>
-		 <!-- 开关功能 -->
+			</view>
+		</view>
+		<view class="uni-flex uni-row info">
+			<view class="flex-item ">PM2.5 <br> <text>89</text> <br> <text>ug/m3</text></view>
+			<view class="flex-item ">VOC <br> <text>20</text> <br> <text>PPM</text></view>
+			<view class="flex-item" style="border-right:none">CO2 <br> <text>80</text> <br> <text>PPM</text></view>
+		</view>
+		<view class="addbg"></view>
+		<!-- 开关功能 -->
 		<view class="uni-flex uni-row keys">
-					  <view class="flex-item">
-						 
-						 <img src="../../../static/on.png" alt="" style='width:80upx;height: 80upx;'>
-						 <text>开关</text>
-					  </view>
+			<view class="flex-item uni-center">
+
+				<img src="../../../static/on.png" alt="" style='width:80upx;height: 80upx;'><br>
+				<text>开关</text>
+			</view>
+			<view class="flex-item uni-center">
+			
+				<img src="../../../static/xuehua2.png" alt="" style='width:80upx;height: 80upx;'><br>
+				<text>制冷</text>
+			</view>
+			<view class="flex-item uni-center">
+			
+				<img src="../../../static/hot.png" alt="" style='width:80upx;height: 80upx;'><br>
+				<text>制热</text>
+			</view>
+			<view class="flex-item uni-center">
+			
+				<img src="../../../static/tongfen.png" alt="" style='width:80upx;height: 80upx;'><br>
+				<text>通风</text>
+			</view>
+			<view class="flex-item uni-center">
+			
+				<img src="../../../static/shi.png" alt="" style='width:80upx;height: 80upx;'><br>
+				<text>除湿</text>
+			</view>
 		</view>
 	</view>
 </template>
@@ -60,76 +61,131 @@
 			uniSegmentedControl,
 			uniIcon,
 			uniBadge
-			},
+		},
 		data() {
 			return {
-				 items: ['制冷','制热'],
-            current: 0
+				items: ['制冷', '制热'],
+				current: 0
 			}
 		},
+		onLoad(){
+			
+		},
 		methods: {
-		  onClickItem(index) {
-            if (this.current !== index) {
-                this.current = index;
-            }
-        }
+			onClickItem(index) {
+				if (this.current !== index) {
+					this.current = index;
+				}
+			}
 		}
 	}
 </script>
 
 <style>
-	.uni-padding-wrap  {
+	.content {
+		position: relative;
+	}
+
+	.uni-padding-wrap {
 		width: 100%;
 		background: url(../../../static/control.png) no-repeat;
 		background-size: 100% 100%;
+		height: 1000upx;
 	}
 
 	.set {
 		font-size: 30upx;
 	}
-	.top{
-		width:550upx;
+
+	.top {
+		width: 550upx;
 		height: 70upx;
 		line-height: 70upx;
-		background:transparent;
-		margin:50upx auto;
+		background: transparent;
+		margin: 50upx auto;
 		border-radius: 25upx;
-		padding:0 20upx;
-		color:#88cfed;
+		padding: 0 20upx;
+		color: #88cfed;
 		text-align: left;
 	}
-	.cool{
+
+	.cool {
 		/* margin-top:60upx; */
 	}
-	.wen{
-		font-size:96upx;
-		color:#79c4e3
-		
+
+	.wen {
+		font-size: 96upx;
+		color: #79c4e3
 	}
-	.num{
+
+	.num {
 		position: absolute;
-		top:180upx;
-		left:295upx;
+		top: 210upx;
+		left: 270upx;
 		color: #fff;
-		font-size:60upx;
+		font-size: 60upx;
 	}
-	.add{
+
+	.add {
 		position: absolute;
-		top:200upx;
-		right:50upx;
+		top: 200upx;
+		right: 90upx;
 	}
-	.reduce{
+
+	.reduce {
 		position: absolute;
-		top:200upx;
-		left:50upx;
+		top: 200upx;
+		left: 43upx;
 	}
-	.yunImg{
+
+	.yunImg {
+
+		position: absolute;
+		top: 830upx;
+		left: -32upx;
+	}
+
+	.keys {
+		padding:0 40upx;
+		/* background: url(../../../static/images/yun_02.png) no-repeat;
+		background-size: 100% 100%; */
+	}
+
+	.addbg {
+		height: 160upx;
+		width: 100%;
+		background: url(../../../static/images/yun_02.png) no-repeat;
+		background-size: 100% 100%;
+		position: absolute;
+		top: 695upx;
+
+	}
+
+	.info {
+		position: absolute;
+		top: 650upx;
+		left:38upx;
+		z-index: 20;
 		
-		position: absolute;
-		top:830upx;
-		left:-32upx;
 	}
-	.keys{
-		padding:40upx 20upx;
+	.info view{
+		font-size:40upx;
+		color:#888;
+		width:230upx;
+		height:200upx;
+		border-right:1upx solid #ccc;
+		border-bottom: 1upx solid #ccc;
+		text-align: center;
+		line-height: 1.2;
+	}
+	.info text{
+		font-size:30upx;
+	}
+	.keys text{
+		color:#888;
+	}
+	.keys view{
+		line-height: 1.2;
+		width:140upx;
 	}
 </style>

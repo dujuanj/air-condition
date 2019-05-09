@@ -1,0 +1,1 @@
+<view bind:__l="__l"><uni-nav-bar left-icon="back" left-text="返回" title="添加设备" data-event-opts="{{[['^clickLeft',[['back']]]]}}" bind:clickLeft="__e"></uni-nav-bar></view>

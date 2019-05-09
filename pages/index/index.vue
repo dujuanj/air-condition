@@ -70,6 +70,7 @@
 			controls(){
 				uni.reLaunch({
 					url: './device/device'
+					
 				});
 			}
 		}

@@ -1,0 +1,20 @@
+{
+  "navigationBarTitleText": "添加",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "",
+        "fontSrc": "/static/uni.ttf",
+        "fontSize": "22px",
+        "color": "#999999"
+      }
+    ]
+  },
+  "usingComponents": {
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
+    "uni-steps": "/components/uni-steps/uni-steps",
+    "uni-notice-bar": "/components/uni-notice-bar/uni-notice-bar",
+    "uni-load-more": "/components/uni-load-more/uni-load-more",
+    "uni-popup": "/components/uni-popup/uni-popup"
+  }
+}

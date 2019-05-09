@@ -1,4 +1,14 @@
 {
-  "navigationBarTitleText": "uni-app",
+  "navigationBarTitleText": "设备",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "",
+        "fontSrc": "/static/uni.ttf",
+        "fontSize": "22px",
+        "color": "#999999"
+      }
+    ]
+  },
   "usingComponents": {}
 }
