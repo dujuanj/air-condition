@@ -49,7 +49,7 @@
     "alwaysShowBeforeRender": true,
     "autoclose": false
   },
-  "appname": "air-app",
+  "appname": "airapp",
   "compilerVersion": "1.9.4",
   "usingComponents": {}
 }

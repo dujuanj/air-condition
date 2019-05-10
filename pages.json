@@ -3,16 +3,12 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "设备",
+				// "navigationBarTitleText": "设备",
 				"app-plus": {
-					"titleNView": {
-						"buttons": [{
-							"text": "\ue534",
-							"fontSrc": "/static/uni.ttf",
-							"fontSize": "22px",
-							"color": "#999999"
-						}]
-					}
+					"titleNView": false,
+					"compatible": {  
+    "ignoreVersion": true //true表示忽略版本检查提示框，HBuilderX1.9.0及以上版本支持  
+}
 				},
 				 "animationType": "fade-in",
         "animationDuration": 300
@@ -21,48 +17,37 @@
 		{
 			"path": "pages/index/device/device",
 			"style": {
-				"navigationBarTitleText": "场景",
+				// "navigationBarTitleText": "场景",
 				"app-plus": {
-					"titleNView": {
-						"buttons": [{
-							"text": "\ue534",
-							"fontSrc": "/static/uni.ttf",
-							"fontSize": "22px",
-							"color": "#999999"
-						}]
-					}
+					"titleNView": false,
+					"compatible": {  
+    "ignoreVersion": true //true表示忽略版本检查提示框，HBuilderX1.9.0及以上版本支持  
+} 
 				}
 			}
 		},
 		{
 			"path": "pages/index/device/add",
 			"style": {
-				"navigationBarTitleText": "添加",
+				"navigationBarTitleText": "添加设备",
+				"navigationStyle":"default",
 				"app-plus": {
-					"titleNView": {
-						"buttons": [{
-							"text": "\ue534",
-							"fontSrc": "/static/uni.ttf",
-							"fontSize": "22px",
-							"color": "#999999"
-						}]
-					}
+					"titleNView": true,
+					"compatible": {  
+    "ignoreVersion": true //true表示忽略版本检查提示框，HBuilderX1.9.0及以上版本支持  
+}
 				}				
 			}
 		},
 		{
 			"path": "pages/index/device/control",
 			"style": {
-				"navigationBarTitleText": "空调",
+				// "navigationBarTitleText": "空调",
 				"app-plus": {
-					"titleNView": {
-						"buttons": [{
-							"text": "\ue534",
-							"fontSrc": "/static/uni.ttf",
-							"fontSize": "22px",
-							"color": "#999999"
-						}]
-					}
+					"titleNView":false,
+					"compatible": {  
+					"ignoreVersion": true //true表示忽略版本检查提示框，HBuilderX1.9.0及以上版本支持  
+} 
 				}				
 			}
 		}
@@ -94,7 +79,7 @@
 				"selectedIconPath": "static/apiHL.png",
 				"text": "控制"
 			}, {
-				"pagePath": "pages/tabBar/extUI/extUI",
+				"pagePath": "pages/index/device/shopping",
 				"iconPath": "static/extui.png",
 				"selectedIconPath": "static/extuiHL.png",
 				"text": "商城"

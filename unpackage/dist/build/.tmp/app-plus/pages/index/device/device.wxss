@@ -32,9 +32,9 @@
 .num {
 	position: absolute;
 	top: 210rpx;
-	left: 270rpx;
+	left: 240rpx;
 	color: #fff;
-	font-size: 60rpx;
+	font-size: 78rpx;
 }
 .add {
 	position: absolute;
@@ -67,19 +67,17 @@
 }
 .info {
 	position: absolute;
-	top: 650rpx;
-	left:38rpx;
+	top: 600rpx;
+	left:200rpx;
 	z-index: 20;
 }
 .info view{
 	font-size:40rpx;
 	color:#888;
-	width:230rpx;
-	height:200rpx;
-	border-right:1rpx solid #ccc;
-	border-bottom: 1rpx solid #ccc;
+	/* width:50%; */
+	/* height:200upx;		 */
 	text-align: center;
-	line-height: 1.2;
+	line-height: 40rpx;
 }
 .info text{
 	font-size:30rpx;
@@ -90,5 +88,7 @@
 .keys view{
 	line-height: 1.2;
 	width:140rpx;
+}
+.closebtn ._img{
 }
 

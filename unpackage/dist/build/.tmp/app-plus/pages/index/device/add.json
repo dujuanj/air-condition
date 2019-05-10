@@ -1,14 +1,9 @@
 {
-  "navigationBarTitleText": "添加",
-  "titleNView": {
-    "buttons": [
-      {
-        "text": "",
-        "fontSrc": "/static/uni.ttf",
-        "fontSize": "22px",
-        "color": "#999999"
-      }
-    ]
+  "navigationBarTitleText": "添加设备",
+  "navigationStyle": "default",
+  "titleNView": true,
+  "compatible": {
+    "ignoreVersion": true
   },
   "usingComponents": {
     "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",

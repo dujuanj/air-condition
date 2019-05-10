@@ -1,14 +1,7 @@
 {
-  "navigationBarTitleText": "空调",
-  "titleNView": {
-    "buttons": [
-      {
-        "text": "",
-        "fontSrc": "/static/uni.ttf",
-        "fontSize": "22px",
-        "color": "#999999"
-      }
-    ]
+  "titleNView": false,
+  "compatible": {
+    "ignoreVersion": true
   },
   "usingComponents": {
     "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar"

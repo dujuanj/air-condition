@@ -1,8 +1,8 @@
-<template>
-	<view class="content">
-		<uni-nav-bar left-icon="back" left-text="返回" title="添加设备" @click-left='back'></uni-nav-bar>
+<template >
+	<view class="content" :style='allheight'>
+		<!-- <uni-nav-bar left-icon="back" left-text="返回" title="添加设备" @click-left='back' ></uni-nav-bar> -->
 		<!-- 添加设备 -->
-		<view class="uni-padding-wrap uni-common-mt">
+		<view class="uni-padding-wrap ">
 			<uni-steps :data="[
 			     {title: '事件一'}, 
 			     {title: '事件二'}, 
@@ -73,8 +73,25 @@
 		},
 		data() {
 			return {
-				middle:false
+				middle:false,
+				show:true,
+				allheight: {
+					height: ''
+				}
 			}
+		},
+		onLoad() {
+			var _this = this;
+			uni.getSystemInfo({
+				success: function(res) {
+					console.log(res.model);
+					_this.allheight.height = res.windowHeight + "px";
+					console.log(_this.allheight.height);
+					console.log(res.windowWidth);
+					console.log(res.windowHeight);
+		
+				}
+			});
 		},
 		methods: {
 			back() {
@@ -83,7 +100,11 @@
 				});
 			},
 			formSubmit() {
+				var _this=this;
 				this.middle=true;
+				setTimeout(function(){
+					_this.middle=false;
+				},1000)
 			},
 			hidePopup(){
 				this.middle=false;
@@ -93,7 +114,7 @@
 </script>
 
 <style>
-	uni-page-body {
+	.content {
 		width: 100%;
 		background: url(../../../static/bg.jpg) no-repeat;
 		background-size: 100% 100%;
@@ -102,4 +123,5 @@
 	.set {
 		font-size: 30upx;
 	}
+	
 </style>
